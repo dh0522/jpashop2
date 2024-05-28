@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jpabook2.jpashop2.domain.Member;
 
 @Repository // entity를 찾아주는 애
 public class MemberRepository {
