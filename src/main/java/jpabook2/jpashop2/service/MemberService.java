@@ -17,7 +17,7 @@ import lombok.RequiredArgsConstructor;
 public class MemberService {
 
 
-	private MemberRepository memberRepository;
+	private final MemberRepository memberRepository;
 
 
 	// 회원 가입
