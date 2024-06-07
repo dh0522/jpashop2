@@ -1,5 +1,7 @@
 package jpabook2.jpashop2.controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -45,5 +47,15 @@ public class MemberController {
 		memberService.join(member);
 		// 저장되고 첫번째 페이지로 돌아가 있으면
 		return "redirect:/";
+	}
+
+
+	@GetMapping("/members")
+	public String list(Model model){
+		List<Member> members = memberService.findMembers();
+		model.addAttribute("members",members);
+		// model.addAttribute("members", memberService.findMembers()); 로 인라인으로 구현해도 된다.
+
+		return "members/memberList";
 	}
 }
